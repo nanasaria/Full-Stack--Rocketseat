@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #F5F4F0;
+}
+
+.container{
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+p{
+    font-size: 16px;
+    color: #333333;
+}
+
+h1{
+    font-size: 36px;
+    color: #1B1B1B;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #E1624F;
+}
+
+.busan h3 {
+    margin-top: 5%;
+}
+
+.busan h1{
+    margin-top: 0.5%;
+}
+
+.busan img{
+    width: 1120px;
+    height: 660px;
+    margin-top: 4%;
+}
+
+.busan p{
+    color: #333333;
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.templo-haedong {
+    border-top: 2px solid #D9D9D9;
+}
+
+.templo-haedong h3{
+    margin-top: 5%;
+}
+
+.templo-haedong h1{
+    font-size: 32px;
+    margin-bottom: 1%;
+}
+
+.templo-haedong p{
+    margin-top: 2%;
+    text-align: left;
+}
+
+.templo-haedong img{
+    width: 1120;
+    height: 522;
+    margin-top: 3%;
+}
+
+.templo-haedong h2{
+    margin-top: 2%;
+}
+
+.templo-haedong p{
+    margin-bottom: 2%;
+    margin-top: -0.02%;
+}
+
+.templo-haedong ul{
+    margin-top: -2%;
+    margin-left: 2%;
+    margin-bottom: 4%;
+    font-weight: bold;
+    color: #0C51A7;
+}
+
+.templo-beomeo-sa p{
+    margin-top: 2%;
+    text-align: left;
+}
+
+.templo-beomeo-sa img{
+    width: 1120;
+    height: 522;
+    margin-bottom: 2%;
+}
+
+.templo-beomeo-sa p{
+    margin-bottom: 2%;
+    margin-top: -0.02%;
+}
+
+.templo-beomeo-sa ul{
+    margin-top: -2%;
+    margin-left: 2%;
+    margin-bottom: 4%;
+    font-weight: bold;
+    color: #0C51A7;
+}
+
+.parque-yongdusan p{
+    margin-top: 2%;
+    text-align: left;
+}
+
+.parque-yongdusan img{
+    width: 1120;
+    height: 522;
+    margin-bottom: 2%;
+}
+
+.parque-yongdusan p{
+    margin-bottom: 2%;
+    margin-top: -0.02%;
+}
+
+.parque-yongdusan ul{
+    margin-top: -2%;
+    margin-left: 2%;
+    margin-bottom: 4%;
+    font-weight: bold;
+}
+
+li#casais{
+    color: #591B98;
+}
+
+li#familia{
+    color: #E5245E;
+}
+
+li#orcamento{
+    color: #E95E10;
+}
+
+.parque-yongdusan {
+    border-bottom: 2px solid #D9D9D9;
+}
+
+#mensagem-final{
+    margin-top: 4%;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
