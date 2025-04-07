@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brand-light: #59b2ff;
+  --brand-mid: #3487cf;
+  --brand-dark: #1d6fb6;
+  --purple: #b259ff;
+  --fuschia: #ff59f9;
+  --pink: #ff598b;
+  --orange: #ff8b59;
+  --yellow: #ffcd59;
+  --lime: #e1ff59;
+  --green: #59ff91;
+  --cyan: #59fff9;
+  --navy: #6a59ff;
+  --danger: #ff5959;
+  --input-base: #1c1f21;
+  --input-stroke: #363b40;
+  --input-placeholder: #869198;
+  --shape-background: #131516;
+  --shape-body: #212427;
+  --shape-button: #2d3136;
+  --shape-hover: #383d42;
+  --text-body: #c8cdd0;
+  --text-heading: #f9f9f9;
+  --leckerli-one: "Leckerli One", cursive;
+  --baloo: "Baloo 2", sans-serif;
+  --open-sans: "Open Sans", sans-serif;
+  --logo: 400 2.5rem / auto var(--leckerli-one);
+  --heading-md: 600 1.75rem / auto var(--baloo);
+  --heading-sm: 600 1.125rem / auto var(--baloo);
+  --body-md: 400 1rem / auto var(--open-sans);
+  --body-sm: 400 0.875rem / auto var(--open-sans);
+  --body-md: 400 0.75rem / auto var(--open-sans);
+}
+
+body {
+  background-color: var(--shape-background);
+  overflow: hidden;
+}
+
+h1,
+h2 {
+  color: var(--text-heading);
+}
+
+.flex {
+  display: flex;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 23.5% 76.5%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

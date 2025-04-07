@@ -1,0 +1,37 @@
+#info-main {
+  padding: 20px;
+  background-color: var(----shape-background);
+
+  .header-logo {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 16px;
+    position: absolute;
+
+    #Festivite {
+      font-family: "Leckerli One", cursive;
+      font-size: 2.5rem;
+      color: var(--pink);
+      position: relative;
+    }
+
+    #logo {
+      width: 45.85px;
+      height: 48px;
+    }
+
+    p {
+      font-family: var(--open-sans);
+      font-size: 1rem;
+      color: var(--text-heading);
+    }
+  }
+
+  #background {
+    border-radius: 12px;
+    z-index: -1;
+    max-width: 400px;
+    max-height: 728px;
+  }
+}

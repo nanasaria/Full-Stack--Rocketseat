@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Formulário de Convite</title>
+  </head>
+  <body>
+    <div id="app">
+      <aside id="info-main">
+        <div class="header-logo">
+          <img id="logo" src="assets/icon/Logo.svg" alt="" />
+          <h2 id="Festivite">Festivite</h2>
+          <p>Crie um convite digital para o seu evento</p>
+        </div>
+        <img id="background" src="assets/image/Background.png" alt="" />
+      </aside>
+      <main>
+        <div class="main-container">
+          <form action="">
+            <h1>Crie seu convite</h1>
+            <div class="section" id="about-event">
+              <h2 class="subtitle">
+                <img src="assets/icon/calendar.svg" alt="" />
+                Sobre o evento
+              </h2>
+              <label for="name-event">Título</label>
+              <input
+                type="text"
+                name="name-event"
+                id="name-event"
+                class="input"
+                placeholder="Nome do evento"
+              />
+              <div class="two-input">
+                <label for="date-event"
+                  >Início
+                  <input
+                    type="date"
+                    name="date-event"
+                    id="date-event"
+                    class="input"
+                    placeholder="DD/MM/AAAA, --:--"
+                  />
+                </label>
+                <label for="date-end-event"
+                  >Fim
+                  <input
+                    type="date"
+                    name="date-end-event"
+                    id="date-end-event"
+                    class="input"
+                    placeholder="DD/MM/AAAA, --:--"
+                  />
+                </label>
+              </div>
+
+              <div class="two-input">
+                <label for="type"
+                  >Tipo
+                  <div id="type">
+                    <button class="btn-selected">
+                      <img src="assets/icon/building-2.svg" alt="Personal" />
+                      Presencial
+                    </button>
+                    <button>
+                      <img src="assets/icon/video.svg" alt="Online" />
+                      Presencial
+                    </button>
+                  </div>
+                </label>
+                <label for="where-event"
+                  >Local
+                  <input
+                    type="text"
+                    name="where-event"
+                    id="where-event"
+                    class="input"
+                    placeholder="Link ou endereço"
+                  />
+                </label>
+              </div>
+              <label for="description">Descrição</label>
+              <textarea
+                name="description"
+                id=""
+                class="input"
+                placeholder="Escreva sobre os detalhes do evento"
+                rows="10"
+              ></textarea>
+            </div>
+
+            <div class="section" id="personalization">
+              <h2 class="subtitle">
+                <img src="assets/icon/paintbrush-vertical.svg" alt="" />
+                Personalização
+              </h2>
+              <div class="colors-event">
+                <h3 class="subtitle-sm">Cor principal</h3>
+                <span class="colors">
+                  <button class="circle">
+                    <div class="blue"></div>
+                  </button>
+                  <button class="circle" id="navy">
+                    <div class="navy"></div>
+                  </button>
+                  <button class="circle" id="purple">
+                    <div class="purple"></div>
+                  </button>
+                  <button class="circle" id="fuschia">
+                    <div class="fuschia"></div>
+                  </button>
+                  <button class="circle selected" id="pink">
+                    <div class="pink"></div>
+                  </button>
+                  <button class="circle" id="red">
+                    <div class="red"></div>
+                  </button>
+                  <button class="circle" id="orange">
+                    <div class="orange"></div>
+                  </button>
+                  <button class="circle" id="yellow">
+                    <div class="yellow"></div>
+                  </button>
+                  <button class="circle" id="lime">
+                    <div class="lime"></div>
+                  </button>
+                  <button class="circle" id="green">
+                    <div class="green"></div>
+                  </button>
+                  <button class="circle" id="cyan">
+                    <div class="cyan"></div>
+                  </button>
+                </span>
+              </div>
+            </div>
+
+            <div class="section">
+              <h3 class="subtitle-sm">Tema do evento</h3>
+              <div id="themes-event">
+                <div class="card">
+                  <img src="assets/image/Image.png" alt="" />
+                  <p>Aniversário</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (1).png" alt="" />
+                  <p>Infantil</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (2).png" alt="" />
+                  <p>Formatura</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (3).png" alt="" />
+                  <p>Casamento</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (4).png" alt="" />
+                  <p>Chá de bebê</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (5).png" alt="" />
+                  <p>Chá de panela</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (6).png" alt="" />
+                  <p>Carnaval</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (7).png" alt="" />
+                  <p>Páscoa</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (8).png" alt="" />
+                  <p>São João</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (9).png" alt="" />
+                  <p>Halloween</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (10).png" alt="" />
+                  <p>Natal</p>
+                </div>
+                <div class="card">
+                  <img src="assets/image/Image (11).png" alt="" />
+                  <p>Outro</p>
+                </div>
+              </div>
+
+              <div class="two-input">
+                <label for="style">
+                  Estilo
+                  <div class="selector-style">
+                    <button class="btn-style">
+                      <div class="circle-theme"></div>
+                    </button>
+                    <p>Escuro</p>
+                  </div>
+                </label>
+
+                <div class="sendPhoto">
+                  <label for="photo"
+                    >Foto de capa
+                    <button id="selector-photo">
+                      <img src="assets/icon/upload.svg" alt="" />
+                      Selecionar
+                      <input type="file" name="photo" id="photo" hidden />
+                    </button>
+                  </label>
+
+                  <p>Nenhum arquivo selecionado</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="section" id="contact">
+              <h2 class="subtitle">
+                <img src="assets/icon/contact.svg" alt="" />
+                Dados para contato
+              </h2>
+
+              <label for="name">Nome</label>
+              <input type="text" name="name" id="name" class="input" />
+
+              <div class="two-input">
+                <label for="email"
+                  >E-mail
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="input"
+                    placeholder="exemplo@email.com"
+                  />
+                </label>
+
+                <label for="tel"
+                  >Telefone
+                  <input
+                    type="tel"
+                    name="tel"
+                    id="tel"
+                    class="input"
+                    placeholder="(99) 99999-9999 "
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div id="therms">
+              <label for="therms-conditions">
+                <button class="input selected"></button>
+                Li e concordo com os <a href="">Termos e Condições</a> e com a
+                <a href="">Política de Privacidade</a>
+              </label>
+
+              <label for="receive-updates-email">
+                <button class="input"></button>
+                Aceito receber atualizações e promoções por e-mail
+              </label>
+
+              <label for="receive-updates-sms">
+                <button class="input"></button>
+                Aceito receber atualizações e promoções por SMS
+              </label>
+            </div>
+
+            <div class="save-form">
+              <button>
+                <img src="assets/icon/ticket.svg" alt="" />
+                Gerar convite
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
