@@ -1,0 +1,23 @@
+a.social {
+  --bg-img: "";
+  background-image: var(--bg-img);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+
+  a[aria-label="tiktok"] {
+    --bg-img: url(../assets/icons/tiktok.svg);
+  }
+
+  a[aria-label="instagram"] {
+    --bg-img: url(../assets/icons/instagram.svg);
+  }
+
+  a[aria-label="twitter"] {
+    --bg-img: url(../assets/icons/twitter.svg);
+  }
+
+  a[aria-label="discord"] {
+    --bg-img: url(../assets/icons/discord.svg);
+  }
+}
