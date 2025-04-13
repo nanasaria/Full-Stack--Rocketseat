@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Convert</title>
+  </head>
+  <body>
+    <header>
+      <img src="assets/icons/logo.svg" alt="" />
+    </header>
+
+    <section id="card-convert">
+      <form>
+        <label for="input-value">Valor</label>
+        <input
+          class="input-style"
+          type="text"
+          name="input-value"
+          id="input-value"
+          required
+        />
+        <label for="coin">Moeda</label>
+        <select class="input-style" name="coin" id="coin">
+          <option value="" disabled hidden>Selecione a moeda</option>
+          <option value="dolar">Dólar</option>
+          <option value="euro">Euro</option>
+          <option value="libra">Libra esterlina</option>
+        </select>
+
+        <button disabled>Converter em reais</button>
+      </form>
+
+      <div class="result">
+        <span class="current-quote"></span>
+        <h1 class="result-real"></h1>
+      </div>
+    </section>
+    <script src="js/index.js"></script>
+  </body>
+</html>

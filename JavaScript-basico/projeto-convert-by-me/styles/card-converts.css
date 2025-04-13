@@ -1,0 +1,99 @@
+#card-convert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: auto;
+    background-color: var(--blue-300);
+    padding-inline: 4rem;
+    padding-block: 3.5rem;
+    gap: 8px;
+    border: 2px solid var(--blue-400);
+    border-radius: 1.5rem;
+
+    & .input-style {
+      width: 352px;
+      height: 52px;
+      background-color: var(--blue-200);
+      border: 2px solid var(--blue-400);
+      border-radius: 0.5rem;
+      color: var(--blue-900);
+      padding: 0.5rem;
+
+      & option {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 1.25rem;
+        background-color: var(--blue-300);
+        outline: 2px solid var(--blue-400);
+      }
+    }
+
+    & .input-style:focus {
+      outline: 2px solid var(--blue-700);
+    }
+
+    & label {
+      padding-top: 1.25rem;
+    }
+
+    & select {
+      margin-bottom: 3rem;
+    }
+
+    & button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 352px;
+      height: 52px;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: var(--blue-600);
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    & button:hover {
+      background-color: var(--blue-700);
+    }
+
+    & button:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+.result {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2.5rem;
+  width: 480px;
+  height: 156px;
+  z-index: 1;
+  background-color: var(--blue-400);
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  bottom: 0;
+
+  & span {
+    color: var(--blue-800);
+  }
+
+  & h1 {
+    color: var(--white);
+  }
+}
