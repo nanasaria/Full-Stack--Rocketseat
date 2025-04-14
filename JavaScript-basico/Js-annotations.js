@@ -178,5 +178,203 @@ input.addEventListener("input", () => {
     Propriedade match() verifica um padrão.
     console.log(value.match(regex))
 })
+
+Acessando propriedades e métodos usando a notação de ponto.
+const user = {
+    name: "Bárbara",
+    surname: "Barbie",
+    age: 19,
+
+    function: method(){
+        console.log("Olá, sou um método :)")
+    }
+}
+
+console.log(user.name)
+
+Acessando um método dentro do objeto:
+user.method()
+
+//Notação de colchetes - Outra alternativa.
+console.log(user["name"])
+user["message"]()
+
+Acessar propriedades dentro do contexto do objeto:
+const user = {
+    name: "Bárbara",
+
+    message: function (){
+        console.log(`Olá, ${this.name}`)
+    }
+}
+
+** Com arrow function o "this" não funciona
+
+Atualizar objetos em javascript:
+const product = {
+    name: "Teclado",
+    quantity: 100
+}
+
+atualizar a propriedade:
+product.quantity = 90
+
+Encadeamento Opcional (?.):
+Se a propriedade ou função chamada é nullish (null or undefined),
+a expressão retorna undefined em vez de gerar um erro.
+
+Útil ao explorar o conteúdo de um objeto quando não existe
+garantia de existência de determinadas propriedades obrigatórias.
+
+const user = {
+    id: 1,
+    name: "Rodrigo",
+    address: {
+        street: "Avenida Brasil",
+        city: "São Paulo",
+        geo: {
+            latitude: 47.8080,
+            longitude: 17.5674
+        }
+    }
+    
+    message: function() {
+        console.log(`Olá, ${this.name}`)
+    }
+}
+
+console.log(user?.address?.street)
+
+OPERADOR DE COALESCÊNCIA NULA (??)
+Operador lógico que retorna o seu operando do lado direito
+quando o seu operador do lado esquerdo é null ou undefined.
+Caso contrário, ele retorna o seu operando do lado esquerdo.
+Ou seja, vai retornar o que houver valor.
+
+let content = null
+console.log(content ?? "Conteúdo padrão")
+Esse log imprime "Conteúdo padrão".
+
+content = "Olá"
+console.log(content ?? "Conteúdo padrão")
+Nesse caso, que o content agora tem um valor, imprimiu
+"Olá".
+
+Ele entende apenas o null e undefined, se passar um valor
+boolean, por exemplo, ele entende que contém um valor.
+
+Utilizando com objetos:
+const user = {
+    name: "Rodrigo",
+    avatar: undefined
+}
+
+console.log(user.avatar ?? "default.png")
+
+Função construtora
+É a função que usamos com o operador new que é capaz de
+instanciar objetos.
+
+function createProduct(name) {
+    const product = {}
+
+    product.name = name;
+    product.details = function(){
+        console.log(`O nome do produto é ${this.name}`)
+    }
+
+    return product
+}
+
+const product1 = new createProduct("Teclado")
+const product2 = new createProduct("Mouse")
+
+function Person(name){
+    this.name = name;
+    this.message = function(){
+        console.log(`Olá, ${this.name}`)
+    }
+}
+
+const person1 = newPerson("Kiana")
+
+Texto maiúsculo e minúsculo:
+
+let message = "Olá, mundo!"
+message.toUpperCase() -> Maiúsculo
+message.toLowerCase() -> Minúsculo
+
+Comprimento de uma string:
+message.length
+
+Substituindo e fatiando uma string
+
+Substituir:
+1° parâmetro se refere a qual parte quer substituir
+2° parâmetro é pelo que se quer substituir:
+message.replace(",", " ")
+Nesse caso vai substituir a virgula por um espaço.
+
+Fatiar:
+1° parâmetro se refere ao inicio de onde vai começar a fatiar
+2° parâmetro se refere ao fim de onde termina de fatiar
+message.slice(0,3)
+Nesse caso, vai retornar: "Olá".
+
+Extraindo uma parte de trás para frente:
+message.slice(-6)
+Nesse caso, vai retornar: "mundo!".
+
+Remover espaços em branco no início e final da string:
+let textWithSpace = "   Texto de exemplo    "
+textWithSpace.trim()
+
+Completando uma string
+const creditCard = "1234567891239367"
+const lastDigits = creditCard.slice(-4)
+
+Ocultar o restante dos números:
+método padStart() preenche a string a partir do início.
+Recebe dois parâmetros.
+1° parâmetro - Qual o tamanho que quer para o texto
+2° parâmetro - Pelo que vai substituir
+const maskedNumber = lastDigits.padStart(creditCard.length, "X")
+Preenche todos os números como X com exceção dos 4 últimos.
+
+método padEnd() preenche a string a partir do fim.
+Recebe dois parâmetros.
+1° parâmetro - Qual o tamanho que quer para o texto
+2° parâmetro - Pelo que vai substituir
+
+const number = 123
+number.padEnd(10, "#")
+Vai completar com jogo da velha até 10, com exceção do 123.
+
+Separando e unindo strings:
+let text = "Estudar, aprender, praticar"
+
+Método de split divide o texto.
+O parâmetro que ele recebe é a partir de qual caractere ou
+parte de texto pode dividir. Ou seja, onde faz o corte.
+let separate = text.split(",")
+Split gera um array com as palavras separadas.
+Nesse caso, resulta em:
+["Estudar", "Aprender", "Praticar"]
+
+Como unir a string:
+Sem parâmetros, o join insere vírgulas ao fim de cada pedaço,
+mas você pode passar algo para ele colocar.
+let joined = separate.join()
+
+Encontrando um conteúdo em uma string:
+let message = "Estou estudando os fundamentos do JS"
+
+Obter a posição da palavra:
+IndexOf é um método que retorna o índice inicial da 
+palavra que você passar por parâmetro.
+message.indexOf("JS")
+
+Verificar se uma palavra existe na String.
+message.includes("JS")
 _________________________________________________________________________________________________
 */
