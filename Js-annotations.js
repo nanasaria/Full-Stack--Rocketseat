@@ -418,5 +418,386 @@ Recebe 2 parâmetros.
 
 fruits.splice(0, 2)
 Retorno: ["Strawberry", "Lemon"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loop FOR
+Repete até que a condição específica seja FALSA.
+
+Recebe:
+- Variável de controle
+- Condição
+- Incremento ou decremento da variável de controle
+
+for(step = 0; step < 10; step++){
+    console.log(step)
+}
+
+Executa de 0 a 9, portanto retorna o número 0 ao 9.
+
+Exemplo de tabuada:
+for (let i = 0; i <= 10; i++) {
+  const num = 7;
+  console.log(`${num} X ${i} = ${num * i}`);
+}
+
+For in:
+Executa as interações a partir de um objeto e percorre as propriedades.
+
+let person = {
+    name: "Lady",
+    surname: "Gaga",
+    email: "ladygaga@gmail.com"
+}
+
+Dentro do parênteses utilizamos o in.
+1° parâmetro: Variável auxiliar.
+2° parâmetro: in.
+3° parâmetro: Objeto que gostaria de percorrer.
+
+for (let property in person){
+    console.log(property) -> Exibe o nome da propriedade.
+    console.log(person[property]) -> Exibe o conteúdo da propriedade. 
+}
+
+For of
+Itera sobre valores de um objeto iterável.
+
+let students = ["Maria", "Malévola", "Cinderela"]
+
+for(let student of students){
+    console.log(student)
+}
+
+Com of você retorna o conteúdo e o in você retorna o índice.
+
+Break 
+Encerra a execução da repetição ou switch para seguir
+para a instrução seguinte.
+
+Utilizando o break no for:
+for(let i = 0; i < 10; i++){
+    console.log(i)
+    if(i === 5){
+        break 
+    }
+}
+Quando o i chega ao 5, ele para a execução.
+
+Continue
+Encerra (pula) a execução das instruções na iteração atual e
+continua a execução do loop com a próxima iteração.
+
+for(let i; i < 10; i++){
+    console.log(i)
+    if(i === 5){
+        continue
+    }
+}
+Nesse caso irá imprimir do 0 ao 4 e quando chega ao 5, ele 
+volta a execução do inicio e retorna o restante 6 a 9.
+
+Data e Hora
+
+Exibir data e hora atual:
+new Date()
+
+Retornar a quantidade de milissegundos decorridos desde a data
+que o JavaScript usa de referência:
+new Date().getTime()
+
+Definindo uma data específica:
+
+1° parâmetro: Ano
+2° parâmetro: Mês -> Sempre começa do 0, ou seja, janeiro é 0 e dezembro é 11.
+3° parâmetro: Dia
+
+new Date(2025, 3, 15)
+
+
+Definindo uma data e uma hora específica:
+4° parâmetro: Horas
+5° parâmetro: Minutos
+6° parâmetro: Segundos
+new Date(2025, 3, 15,14,30,0)
+
+Outra maneira:
+Passar como string e o T é para representar o horário
+new Date("2025-04-15T14:30:00")
+
+Outra maneira:
+new Date("April 4, 2025 15:30:00")
+
+Métodos pra trabalhar com data e hora
+let date = new Date("July 4, 2024 15:32:04")
+
+Trazer o dia da semana:
+date.getDay() -> Pega o dia da semana de 0 a 6. 0 é domingo.
+
+Trazer o dia do mês (0 a 30)
+date.getDate()
+
+Trazer o mês (0 a 11)
+date.getMonth()
+
+Trazer o ano
+date.getFullYear()
+
+Trazer as horas
+date.getHours()
+
+Trazer os minutos
+date.getMinutes()
+
+Trazer os segundos
+date.getSeconds()
+
+Modificando uma data e uma hora
+
+Modificar o ano:
+date.setFullYear(2030)
+
+Modificar o mês:
+date.setMonth(2) -> Mudar para maio.
+
+Modificar o dia:
+date.setDate(10)
+
+Formatando uma data e uma hora
+let date = new Date("2023-03-23T12:34:09")
+
+date.getDate().toString().padStart(2, "0") -> Coloca um 0 a frente do dia caso tenha apenas 1 digito.
+
+Convertendo uma data para string
+date.toString() -> Converte para String.
+
+date.toDateString() -> Exibe somente a data
+date.toTimeString() -> Exibe somente a hora.
+
+Exibindo data e hora formatadas de acordo com a localidade
+date.toLocaleDateString() -> Data formata no padrão dia/mes/ano
+date.toLocaleTimeString() -> Hora formatada no padrão hora:minutos:segundos
+
+Exibir a data e hora no formato escolhido:
+Recebe o formato que deseja como parâmetro.
+date.toLocaleDateString("pt-BR")
+date.toLocaleTimeString("pt-BR")
+
+Outros métodos:
+toLocaleString() -> Retorna data e horário de acordo com a localidade.
+date.toLocaleString("pt-BR") -> Ex:. Retorno: 13/02/2023 13:02:24
+
+Podemos passar um objeto também:
+date.toLocaleString("pt-BR", {
+    dateStyle: "short" -> Estilos de exibição
+
+}) 
+
+Retorno: Ex:. 13/02/2021
+
+date.toLocaleString("pt-BR", {
+    dateStyle: "long" -> Estilos de exibição
+
+}) 
+Retorno: Ex:. 1 de julho de 2024
+
+date.toLocaleString("pt-BR", {
+    dateStyle: "long" -> Estilos de exibição
+
+}) 
+Retorno: Ex:. 1 de jul. de 2024
+
+date.toLocaleString("pt-BR", {
+    dateStyle: "full" -> Estilos de exibição
+
+}) 
+Retorno: Ex:. terça-feira, 2 de jul. de 2024
+
+date.toLocaleString("pt-BR", {
+    day: "2-digit", -> 2 dígitos
+    month: "2-digit",
+    hour: "2-digit"
+}) 
+Retorno: Ex:. 02/07, 14:30
+
+let amount = 12.5
+
+amount.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+})
+
+Fuso horário
+Timestap é conhecida como um carimbo de data/hora.
+O Timestamp é um valor que representa um ponto especifico no tempo,
+geralmente expresso como uma contagem de segundos ou milissegundos
+desde um momento de referência.
+
+Referência
+A data do JavaScript é baseada no valor de tempo em milissegundos
+desde a meia noite de 01 de janeiro de 1970, UTC.
+
+Fuso horário
+Duas maneiras de interpretação: Local ou Tempo Universal Coordenado (UTC).
+O fuso horário local não é armazenado no objeto de data,
+mas é determinado pelo ambiente que está executando.
+
+Intl é uma API de Internacionalização do ECMAScript
+const currentLocale = Intl.DateTimeFormat().resolvedOptions()
+Retorno: Informações da localidade.
+
+Podemos utilizar essa API para fazer formatações:
+new Intl.DateTimeFormat("pt-BR").format(new Date())
+
+date.getTimezoneOffset() -> Traz a diferença de timezone em minutos
+date.getTimezoneOffset() / 60 -> Traz a diferença de timezone em horas.
+
+Criando uma data e hora com fuso horário:
+const dateWithTimezone = new Date("2023-03-23T12:34:09:234+03:00")
+dateWithTimezone.toLocaleString() -> Apresenta com o fuso horário e formatado.
+*************************************************************************************
+
+CLASSES
+No JavaScript, as classes são uma forma de criar objetos e definir seu comportamento
+por meio de construtores e métodos.
+Foi introduzida no ECMAScript 2015 (ES6) para fornecer uma sintaxe mais amigável para
+a criação de objetos e herança de protótipos.
+
+Uma classe tem construtores e métodos.
+Um construtor é um método especial chamado quando um objeto é instanciado 
+a partir da classe.
+Métodos são funções associadas a objetos e descrevem o comportamento desses objetos.
+
+Herança
+Uma classe pode herdar propriedades e métodos de outra classe, permitindo a reutilização 
+de código.
+
+Criando uma classe:
+
+class MyClass {
+    Corpo da classe
+}
+
+class Person {
+    constructor(name){
+        console.log("Olá", name)
+    }
+}
+
+const person = new Person("Barbie")
+
+Criando propriedades dentro das classes:
+
+class Product {
+    constructor(name){
+        this.name = name;
+    }
+}
+
+const product = new Product("Teclado")
+
+Adicionando métodos nas classes:
+class User{
+    constructor(name, email){
+        this.name = name
+        this.email = email
+    }
+    
+    sendEmail(){
+        console.log(`E-mail enviado para ${this.name} para o endereço de e-mail ${this.email}`)
+    }
+}
+
+const user = new User("Sabrina", "sabrinacarpenter@gmail.com")
+user.sendEmail()
+
+O que é método estático?
+Método estático pode ser acessado sem a instanciação da classe,
+porém não é possível usar as propriedades do constructor, então,
+no caso de método estático, o melhor é passar os parâmetros no 
+próprio método.
+
+class User{
+    static showMessage(){
+        console.log(`Olá`)
+    }
+}
+
+const user = new User()
+user.showMessage()
+
+User.showMessage() -> Quando é estático, pode acessar assim.
+
+Como aplicar herança com classes?
+class Animal {
+    constructor(name){
+        this.name = name
+    }
+    
+    makeNoise(){
+        console.log("SOM!")
+    }
+}
+
+class Dog extends Animal {
+    Executa e recebe o que está em Animal, mesmo que
+    não tenha nada declarado aqui
+}
+
+Sobrescrevendo os métodos:
+Quando não sobrescrevemos o método, ele pega o método 
+referência na classe base.
+
+class Dog extends Animal {
+    Executa e recebe o que está em Animal.
+
+    makeNoise(){
+        console.log("Woof! Woof!")
+    }
+}
+
+Herança e cadeia de protótipos
+
+Classes x Prototype
+Quando se trata de herança, o JavaScript tem somente um construtor: Objetos.
+Cada objeto tem um link interno para um outro objeto chamado prototype.
+O objeto prototype também tem um atributo propotype, e assim por diante até
+que o valor seja null. O null que, por definição, não tem prototype, e age
+como um link final nesta cadeia de protótipos.
+
+const address = {
+    city: "São Paulo",
+    country: "Brazil"
+}
+
+O próprio objeto tem um prototype e quando chega ao null, terminou a cadeia.
+Em array também podemos ver esse comportamento.
 _________________________________________________________________________________________________
 */
