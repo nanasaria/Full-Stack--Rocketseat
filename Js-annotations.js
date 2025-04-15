@@ -376,5 +376,47 @@ message.indexOf("JS")
 
 Verificar se uma palavra existe na String.
 message.includes("JS")
+
+**Para o javascript, o array é um objeto.**
+
+Criar array com construtor:
+const newArray = new Array()
+
+o new Array() pode receber um valor para indicar quantas posições quer no array.
+
+Como criar e acessar arrays?
+let fruits = ["Apple", "Orange", "Grape"]
+
+const grape = fruits[2] -> Acessa pelo índice
+
+Convertendo uma String para Array:
+let phrase = "Katy Perry foi para a Lua"
+phrase.split(" ") -> Transforma cada palavra após o espaço em um item de array.
+Retorno: ["Katy","Perry","foi","para","a","Lua"]
+
+Cria um array com as letras
+Array.from(phrase) -> Nesse caso, cada letra da frase se torna um item.
+
+Adicionando e removendo itens em um array:
+let users = []
+users.push("Caio") -> Método push() adiciona um item no fim do array.
+users.unshift("Ana") -> Método unshift() adiciona um item no início do array.
+
+users.shift() -> Método shift() remove um item do início do array
+users.pop() -> Método pop() remove um item do final do array.
+
+Usando o índice:
+let fruits = ["Apple", "Orange", "Grape", "Strawberry", "Lemon"]
+
+let position = fruits.indexOf("Apple") -> Procura qual o índice de apple. Retorno: 0.
+**Procurando um item que não tem no array, retorna -1.
+
+** Método splice()-> Remover elementos do array com base no índice.
+Recebe 2 parâmetros.
+1° parâmetro: A partir de qual posição deletar itens do array
+2° parâmetro: Quantos elementos quer remover
+
+fruits.splice(0, 2)
+Retorno: ["Strawberry", "Lemon"]
 _________________________________________________________________________________________________
 */
