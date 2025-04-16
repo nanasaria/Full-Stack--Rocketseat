@@ -72,6 +72,11 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  if (isNaN(parseFloat(inputValue.value.trim()))) {
+    alert("Por favor, insira um número");
+    return;
+  }
+
   const { title, category, value } = {
     title: inputTitle.value,
     category: selectedCategory.value,
