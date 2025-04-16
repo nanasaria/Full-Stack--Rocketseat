@@ -1,6 +1,4 @@
-# Guia de JavaScript: DOM, Eventos, Expressões Regulares e mais!
-
----
+# JavaScript
 
 ## DOM - Document Object Model
 

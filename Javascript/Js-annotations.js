@@ -799,5 +799,37 @@ const address = {
 
 O próprio objeto tem um prototype e quando chega ao null, terminou a cadeia.
 Em array também podemos ver esse comportamento.
+
+Como utilizar classes pra lidar com exceções?
+let obj = []
+
+try{
+    obj.execute() -> Método que não existe
+}catch(error){
+    Verificar se o erro faz parte da instância TypeError
+    if(error instanceof TypeError){
+        console.log("Método indisponível")
+    }
+}
+
+Como utilizar classes para criar erros customizados?
+
+class MyCustomError {
+    constructor(message) {
+        this.message = "CLASSE DE ERRO CUSTOMIZADO", message
+    }
+}
+
+try {
+    throw new MyCustomError("Erro lançado")
+}catch(error){
+    if(error instanceof MyCustomError){
+        console.log(error.message)
+    }
+    else{
+        console.log("Não foi possível executar")
+    }
+}
+
 _________________________________________________________________________________________________
 */

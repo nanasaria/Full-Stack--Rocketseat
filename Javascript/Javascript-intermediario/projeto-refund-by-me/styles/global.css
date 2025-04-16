@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gray-100: #1f2523;
+  --gray-200: #4d5c57;
+  --gray-300: #cdd5d2;
+  --gray-400: #e4ece9;
+  --gray-500: #f9fbfa;
+  --green-100: #1f8459;
+  --green-200: #2cb178;
+  --danger: #b51919;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: var(--gray-400);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-family: inherit;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: bold;
+}
+
+h4 {
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+}
+
+label,
+.label {
+  font-family: inherit;
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+}
+
+.text-md {
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+.text-lg {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.text-sm {
+  font-family: inherit;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
