@@ -55,7 +55,7 @@
               </label>
             </div>
 
-            <button class="flex text-md bold" disabled>Adicionar despesa</button>
+            <button class="flex text-md bold" id="btn-form" disabled>Adicionar despesa</button>
           </form>
         </div>
       </section>
@@ -65,32 +65,18 @@
             <p id="requests" class="text-lg">Minhas solicitações</p>
             <p id="expenses" class="label flex gap-0-5">
             <img src="assets/icon/divider.svg" alt="" />
-             x Despesas
+            0 Despesas
             </p>
           </div>
           <div class="right flex row">
             <p id="result-coin" class="text-sm flex">R$
-              <h4 id="result-price" class="heading-md">1.420,57</h4>
+              <h4 id="result-price" class="heading-md">0,00</h4>
             </p>
           </div>
         </header>
 
         <div class="items">
-          <ul class="flex column">
-            <li id="1" class="item flex row">
-              <img src="assets/icon/food.svg" alt="">
-              <div class="flex column">
-                <h3 id="title" class="heading-md">Almoço</h3>
-                <p id="category" class="text-sm">Categoria</p>
-              </div>
-              <div class="end flex row">
-                <p class="text-sm coin">R$</p>
-                <p class="subheading value">34,78</p>
-                <button>
-                  <img src="assets/icon/remove.svg" alt="">
-                </button>
-              </div>
-            </li>
+          <ul id="items" class="flex column">
           </ul>
         </div>
       </section>

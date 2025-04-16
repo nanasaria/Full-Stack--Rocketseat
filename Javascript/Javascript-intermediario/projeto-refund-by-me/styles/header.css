@@ -1,19 +1,18 @@
 .header-main {
   display: flex;
   justify-content: flex-start;
-  margin-left: 16.5rem;
 
   button {
     background-color: transparent;
     border: none;
     padding-top: 3rem;
     padding-bottom: 2rem;
-    margin-left: 8.875rem;
+    margin-left: 7.5rem;
   }
 }
 
 @media (width < 1000px) {
   .header-main {
-    margin-left: -8rem;
+    margin-left: -7rem;
   }
 }
