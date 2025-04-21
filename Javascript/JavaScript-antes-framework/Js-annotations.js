@@ -7,12 +7,13 @@ enquanto ele trabalhava no Netscape.
 Em 1996 o JavaScript foi juntado à ECMA International
 com o objetivo de padronizar a linguagem.
 
-
 JavaScript é a linguagem que você escreve e executa nos
 navegadores, enquanto o ECMAScript é a especificação que 
 define como a linguagem JavaScript deve se comportar.
+__________________________________________________________________________________________________________________
 
 Strict mode
+
 Os erros silenciosos passam a gerar exceções no Js.
 Pode ser ativado no escopo global ou de função.
 
@@ -23,7 +24,10 @@ function showMessage(){
     console.log("Olá", personName)
 }
 
+__________________________________________________________________________________________________________________
+
 Desestruturação em Arrays
+
 Permite extrair dados de arrays ou objetos em 
 variáveis distintas.
 
@@ -48,6 +52,7 @@ const [,,orange] = fruits
 console.log(laranja) -> Retorno: laranja
 
 Desestruturação em Objetos
+
 const product = {
     description: "teclado",
     price: 150
@@ -69,8 +74,10 @@ newProduct({
     description: "Mouse", 
     price: 70
 })
+__________________________________________________________________________________________________________________
 
 Rest params (...) 
+
 Permite representar um número indefinido de
 argumentos como um array.
 
@@ -86,7 +93,10 @@ values(1, 2, 3, 4)
 **Dica: Pode usar o nome que desejar com o rest 
 params, não precisa utilizar o "rest".
 
+__________________________________________________________________________________________________________________
+
 Spread
+
 Permite que um objeto iterável, como uma expressão
 array ou uma string seja expandido para ser usado
 onde tiver zero ou mais argumentos.
@@ -504,6 +514,106 @@ export function sum(a, b) {
 
 a importação fica:
 import { sum } from "./calc.js";
+__________________________________________________________________________________________________________________
+
+Funções assíncronas
+
+setTimeout() -> Executar após um intervalo de tempo.
+Executa uma função após um intervalo de tempo especificado.
+
+1° Parâmetro: Função
+2° Parâmetro: Tempo em milissegundos.
+
+setTimeout(() => {
+    console.log("Olá, tudo bem?")    
+}, 3000)
+
+setInterval() -> Executa uma função após um intervalo de 
+tempo especificado. 
+** O setInterval() fica executando a cada intervalo de tempo.
+Ex: Quando você deseja que algo seja executado a cada 5s.
+
+
+let value = 10
+
+const interval = setInterval(() => {
+    console.log(value)
+    value--
+
+    if(value === 0){
+        console.log("Feliz ano novo!")   
+        clearInterval(interval) 
+    }
+}, 1000)
+
+** Essa função decrementa o value a cada 1s, ou seja, 
+a cada 1s tira 1 do valor (10) e quando chega ao 0,
+loga um "Feliz ano novo!" e interrompe o setTimeout 
+com o clearInterval(). **
+
+Sobre Funções Assíncronas
+Quando uma função assíncrona é chamada, ela retorna uma
+Promise.
+Quando a função assíncrona retorna um valor, a Promise 
+será resolvida com o valor retornado.
+Quando a função assíncrona lança uma exceção ou algum valor,
+a Promise será rejeitada com o valor lançado.
+
+Uma função assíncrona pode conter uma expressão await, que 
+pausa a execução da função assíncrona e espera pela resolução
+da Promise passada, e depois retoma a execução da função
+assíncrona e retorna o valor resolvido.
+
+**Se não usar o await, o JavaScript não irá esperar pelo
+retorno de algo, simplesmente vai seguir com a execução
+da função.**
+
+Função que retorna uma Promise:
+function asyncFunction() {
+    return new Promise((resolve, reject) => {
+        **Simular uma operação assíncrona**
+
+        const isSuccess = true
+        if(isSuccess){
+            resolve("A operação foi concluída com sucesso!")
+        }else{
+            reject("Algo deu errado")
+        }
+    })
+}
+
+**A Promise recebe uma função que tem como parâmetro o
+Resolve e o Reject. 
+Resolve -> Quando a Promise é bem sucedida.
+Reject -> Quando a Promise é mal sucedida.**
+
+Visualização da Promise:
+console.log(asyncFunction())
+
+**Apresenta uma Promise pendente porque não foi definido
+que deve esperar a execução da Promise**
+
+Para visualizar o retorno da Promise:
+asyncFunction().then((response) => {
+    console.log("Promise resolvida:",response)
+}).catch((error) => {
+    console.log("Error", Error)    
+}).finally(() => {
+    console.log("Eu executo sempre.")    
+})
+
+**then() espera a função ser resolvida e recupera 
+a resposta usando o parâmetro response pertencente.**
+
+**catch() caso a Promise seja rejeitada, cai no catch
+que retorna o erro utilizando o parâmetro error que 
+pertence a ele.**
+
+**finally() executa independente se a Promise for resolvida
+ou rejeitada.**
+
+Async/Await
+
 
 __________________________________________________________________________________________________________________
 **/
