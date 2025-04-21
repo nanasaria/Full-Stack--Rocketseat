@@ -1,6 +1,6 @@
 # Full-Stack - Rocketseat
 
-Projetos desenvolvidos no curso Full-Stack da Rocket utilizando:
+Estudos e projetos desenvolvidos no curso Full-Stack da Rocketseat utilizando:
 
 <div align="center">
   <img alt="Javascript" height="100" src="https://github.com/user-attachments/assets/2aebfe36-328e-482a-9ea6-f1f40cbb62ee"> &nbsp;&nbsp;
@@ -10,6 +10,3 @@ Projetos desenvolvidos no curso Full-Stack da Rocket utilizando:
   <img alt="HTML" height="100" src="https://github.com/user-attachments/assets/21309435-c0bc-4371-b275-472d92028e17"> &nbsp;&nbsp;
   <img alt="CSS" height="100" src="https://github.com/user-attachments/assets/fb0d1bca-a394-48b3-8920-f07401bb56c8">
 </div>
-
-
-

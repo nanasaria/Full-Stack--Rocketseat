@@ -309,5 +309,201 @@ que o objeto foi alterado.
 
 Aplicando imutabilidade
 
+const address1 = {
+    street: "Av. Brasil",
+    number: 20
+}
+
+Isso não é cópia. É uma referência.
+const address2 = address1
+
+Cria um objeto diferente, mas com os valores e 
+propriedades do address1
+const address2 = {...address1}
+
+Outra opção:
+
+Cria um objeto diferente, mas com os valores e 
+propriedades do address1 já sobrepondo o number.
+const address2 = {...address1, number:30}
+
+Exemplo Array
+const list1 = ["apple", "banana"]
+const list2 = list1 -> REFERÊNCIA
+const list2 = [...list1] -> CÓPIA
+
+**Com array, nesse caso, você também NÃO está criando uma
+cópia e sim uma referência.
+
+SHALLOW COPY - Cópia superficial
+Não pega os itens aninhados.
+
+const htmlCourse = {
+    course: "HTML",
+    students: [{name: "Lana del rey", email: "lanadelrey@gmail.com"}]
+}
+
+Adiciona as propriedades e valores do htmlCourse e 
+sobrescreve o valor da propriedade course.
+const jsCourse = {
+    ...htmlCourse,
+    course: "JavaScript"
+}
+
+jsCourse.students.push({name: "João", email:"joao@email.com"})
+**O problema de fazer isto da forma como estamos fazendo isso
+é que está adicionando esse objeto em htmlCourse também, 
+então, fazendo desta forma não estamos copiando, estamos
+referenciando porque students é um objeto aninhado. Ele só
+faz a cópia do primeiro nível, se houver objetos aninhados
+ele consegue apenas referenciar.**
+
+
+DEEP COPY - Cópia profunda
+const htmlCourse = {
+    course: "HTML",
+    students: [{name: "Lana del rey", email: "lanadelrey@gmail.com"}]
+}
+
+Dessa forma copiamos htmlCourse e o students que é um objeto
+aninhado.
+const jsCourse = {
+    ...htmlCourse,
+    course: "JavaScript",
+    students: [...htmlCourse.students]
+}
+
+jsCourse.students.push({name: "João", email:"joao@email.com"})
+***Agora adicionamos esse objeto apenas em students 
+do JsCourse.***
+
+Outra maneira:
+const jsCourse = {
+    ...htmlCourse,
+    course: "JavaScript"
+}
+
+jsCourse.students = {
+    ...htmlCourse.students
+}
+
+Congelar um objeto para impedir a modificação
+const book = {
+    title: "Objetos Imutáveis",
+    category: "javascript",
+    author: {
+        name: "Lady Gaga",
+        email: "ladygaga@gmail.com"
+    }
+}
+
+O JavaScript em si não impõe restrições à modificação
+dos objetos.
+book.category = "HTML"
+
+Congelar os objetos e impedir a modificação:
+Object.freeze(book)
+
+**O Freeze não impede modificações profundas, ou seja, não
+congela objetos aninhados.
+
+Deep Freeze - Congelar recursivamente cada propriedade.
+Função Recursiva -> Função que chama ela mesma.
+
+const book = {
+    title: "Objetos Imutáveis",
+    category: "javascript",
+    author: {
+        name: "Lady Gaga",
+        email: "ladygaga@gmail.com"
+    }
+}
+
+function deepFreeze(object){
+**Pega todas as propriedades do objeto e devolve como array.**
+**Apenas do primeiro nível.**
+    const props = Reflect.ownKeys(object)
+
+**Itera sobre todas as propriedades do objeto.**
+    for(const prop of props){
+    ** Obtém o valor associado a propriedade atual.**
+        const value = object[prop]
+
+        **Verifica se o valor é um objeto ou uma função
+        para continuar aplicando o deepFreeze em objetos 
+        aninhados.**
+        if ( value && typeof value === "object" || 
+        typeof value === "function" ) {
+            deepFreeze(value)
+        }
+    }
+
+    **Retorna o objeto congelado.**
+    return Object.freeze(object)
+    
+}
+
+**Chama a função para congelar o objeto com Deep Freeze.**
+deepFreeze(book)
+
+Manipulando Objetos Imutáveis 
+
+const book = {
+    title: "Objetos Imutáveis",
+    category: "javascript",
+    author: {
+        name: "Lady Gaga",
+        email: "ladygaga@gmail.com"
+    }
+}
+
+const updatedBook = {
+    ...book,
+    title: "Criando um Front-end moderno com HTML"
+    category: "html"
+}
+
+Utilizar rest operator (desestruturação) para remover 
+propriedades:
+
+const {category, ...bookWithoutCategory} = book
+bookWithoutCategory -> Agora é um objeto sem category.
+
+__________________________________________________________________________________________________________________
+
+Módulos
+ESM é o sistema de módulo JavaScript (ESM é uma abreviação
+para Módulos JavaScript) que define um formato para organizar
+e estruturar o código em módulos, permitindo a modularização
+e reutilização de código.
+
+** Precisa colocar quais funções irá exportar usando um "export",
+se não colocar isso, a função fica disponível apenas ao arquivo 
+que pertence.**
+
+**Para utilizar os modulos, precisa passar para o script
+o tipo módulo (type="module") ou no package.json.**
+
+Exportar funções
+
+Quando colocamos o default depois de export, estamos dizendo
+que a função é exportada por padrão.
+
+export default function sum(a, b) {
+  return a + b;
+}
+
+Quando exportamos por padrão, para importar a função
+fica: import sum from "./calc.js";
+Sem as {}.
+
+Quando exportamos normalmente:
+export function sum(a, b) {
+  return a + b;
+}
+
+a importação fica:
+import { sum } from "./calc.js";
+
 __________________________________________________________________________________________________________________
 **/
