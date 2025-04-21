@@ -614,6 +614,76 @@ ou rejeitada.**
 
 Async/Await
 
+Declaramos que essa é uma função assíncrona.
+**O await indica que o Js deve esperar a resolução, nesse
+caso da asyncFunction().**
+
+async function fetch() {
+    cons response = await asyncFunction()
+}
+
+fetch()
+
+**Para utilizar o await, precisa do async.
+
+Com arrow function:
+
+const fetch = async () => {
+    cons response = await asyncFunction()
+}
+
+Event loop
+
+Característica do Js:
+single threaded: Executa uma coisa por vez.
+no-blocking: Não trava o contexto da execução.
+asynchronous: Por ser no-blocking precisa utilizar um
+paradigma assíncrono para lidar com a execução das 
+coisas.
+concurrent: As tarefas que executam assincronamente 
+concorrem umas com as outras pelo processamento.
+
+Concorrência e Event Loop
+O JavaScript possui um modelo de concorrência baseado
+em um event loop responsável por gerenciar a execução
+de código assíncrono e eventos em um único thread,
+permitindo que o JavaScript seja não bloqueante.
+
+Call Stack
+Armazena as chamadas de funções em execução. Quando uma 
+função é chamada, ela é empilhada no topo da pilha.
+
+Tudo passa pelo Call Stack. Algumas tarefas são executadas
+nela mesma e outras somente passam por ela e será executada
+em uma Web API.
+
+Web APIs 
+Utilização de outros recursos.
+- setTimeout
+- DOM
+- fetch
+
+Callback Queue
+Fila que armazena callbacks e eventos que aguardam para 
+serem processados.
+- onClick
+- onLoad
+
+Event Loop
+Verifica a pilha de Call Stack e Callback. Se houver,
+um callback é removido da fila e colocado na pilha
+de chamadas para execução.
+
+Micro e Macro Tasks
+Existem dois tipos principais de tarefas na fila de 
+callback.
+
+Microtasks: São tarefas de alta prioridade que são executadas
+antes das Macrotasks (temporizadores e promises).
+
+Macrotasks: São tarefas de menor prioridade, como callbacks
+de eventos setTimeout e setInterval.
+
 
 __________________________________________________________________________________________________________________
 **/
