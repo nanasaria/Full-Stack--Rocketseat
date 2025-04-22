@@ -683,7 +683,109 @@ antes das Macrotasks (temporizadores e promises).
 
 Macrotasks: São tarefas de menor prioridade, como callbacks
 de eventos setTimeout e setInterval.
+__________________________________________________________________________________________________________________
 
+Pacotes
+Pacotes (ou bibliotecas) fornecem funcionalidades prontas que
+você pode reutilizar em projetos. Economiza tempo e esforço,
+evitando a necessidade de reescrever funcionalidades.
+
+Gerenciador de pacotes
+É uma ferramenta que facilita a instalação, atualização e
+gerenciamento de bibliotecas e dependências de um projeto.
+
+O gerenciador lida com a resolução de dependências, garantindo
+que as bibliotecas necessárias estejam disponíveis em 
+versões compatíveis.
+
+NPM é um dos gerenciadores de pacotes mais populares para
+JavaScript.
+
+Usado principalmente no ecossistema do Node.js, mas também
+é utilizado em projetos front-end web.
+
+O npm permite instalar e gerenciar pacotes JavaScript e
+executar scripts e bibliotecas instaladas.
+
+Dependências e Ambientes
+
+Produção
+Inclui as dependências necessárias para a execução do projeto
+em um ambiente de produção.
+
+Desenvolvimento
+Inclui as dependências que são necessárias apenas durante o
+desenvolvimento, mas não são necessárias para a execução
+do aplicativo em produção.
+
+Resolução de dependências
+
+Versionamento semântico
+Padrão de atualizações de versões que oferece um modelo
+fácil de entender o que mudou em uma versão.
+
+  9    .    1    .      3
+ Major     Minor      Patch
+
+Major (versão principal): Aumenta quando são feitas alterações
+incompatíveis. Isso significa que, se você atualizar para uma
+nova versão principal, pode haver alterações que quebrarão
+a compatibilidade com versões anteriores.
+
+Minor (versão menor): Aumenta quando são adicionadas novas
+funcionalidades de maneira compatível com versões anteriores.
+As atualizações não devem introduzir alterações que quebram 
+a compatibilidade com o código existente.
+
+Patch (versão de correção): Aumenta quando são feitas correções
+de bugs compatíveis com versões anteriores. Isso significa 
+que essas correções não devem introduzir novas funcionalidades
+ou quebrar a compatibilidade.
+
+Convenções
+O NPM utiliza convenções para gerenciar a resolução de
+dependências e garantir que as instalações subsequentes
+mantenham a compatibilidade com as versões na aplicação.
+
+O simbolo (~) permite atualizações automáticas para versões
+compatíveis permitindo receber patches e correções de bugs.
+
+O simbolo (^) indica que o NPM pode instalar automaticamente
+a versão mais recente compatível, mas não a próxima versão
+compatível.
+
+Isso permite receber patches, correções de bugs e pequenas
+alterações de versão, mas não grandes alterações de versão.
+
+O simbolo (@) indica uma versão exata. O NPM instalará a
+versão indicada.
+__________________________________________________________________________________________________________________
+
+Requisições HTTP
+
+O que é uma API?
+API (Application Programming Interface) é uma interface
+que disponibiliza um conjunto de funcionalidades para
+serem utilizadas.
+
+Ex: API de CEP, previsão do tempo, cotação de moedas, etc.
+
+Relação Cliente e Servidor
+A nossa aplicação (cliente) se conecta com o servidor (API).
+
+Cliente faz a requisição e Servidor dá a resposta.
+
+Métodos HTTP
+GET, POST, PUT, DELETE, PATCH
+
+JSON
+Significa JavaScript Object Notation. É uma notação de
+objetos utilizado para representar dados.
+Amplamente utilizado na comunicação cliente-servidor.
+Baseado em 
+{
+chave:valor
+}
 
 __________________________________________________________________________________________________________________
 **/
