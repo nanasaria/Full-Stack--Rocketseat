@@ -807,6 +807,39 @@ Generator: Gera o código JavaScript.
 ** Compiladores são essenciais para a evolução contínua da
 linguagem. **
 
+__________________________________________________________________________________________________________________
 
+Bundlers
+Agrupa (empacota) diversos arquivos e suas dependências em
+um ou mais pacotes com o objetivo de otimizar o carregamento
+de páginas web.
+
+Funcionamento
+Geração do gráfico de dependência e empacotamento.
+
+Mapeando um gráfico de dependência:
+1. A primeira coisa que um empacotador faz é gerar um mapa
+de relacionamento de todos os arquivos servidos. Este 
+processo é denominado *Resolução de Dependências*.
+
+2. O empacotador requer um arquivo de entrada. 
+O arquivo de entrada geralmente é o principal.
+Em seguida, analisa o arquivo de entrada para entender 
+suas dependências.
+
+3. Por fim, percorre as dependências para determinar
+as dependências dessas dependências, gerando assim, a
+árvore hierárquica. Ou melhor dizendo, seu mapa.
+
+Agrupamento
+Depois de receber entradas e passar por suas dependências
+durante a fase de Resolução de Dependências, um bundler
+entrega ativos estáticos que o navegador pode processar
+com êxito.
+
+Este estágio de saída é denominado packing. Durante esse
+processo, o empacotador aproveitará a resolução de dependência
+para integrar nossos vários arquivos de código e retornar um
+único pacote para o navegador carregar.
 __________________________________________________________________________________________________________________
 **/
