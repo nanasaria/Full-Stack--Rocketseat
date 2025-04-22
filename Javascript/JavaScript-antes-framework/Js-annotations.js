@@ -788,4 +788,25 @@ chave:valor
 }
 
 __________________________________________________________________________________________________________________
+
+Compiladores
+Converte código escrito em uma versão específica do JS para
+outra versão, permitindo usar recursos mais recentes da 
+linguagem mesmo em ambientes que não oferecem suporte a 
+essas funcionalidades. Ex: Navegadores antigos.
+
+Transpilação
+A transpilação também é um termo utilizado para se referir
+a compilação para versões antigas.
+
+Parser: Mapeia todos os elementos do código JS.
+Transformer: Manipula os elementos js para gerar código
+compatível.
+Generator: Gera o código JavaScript.
+
+** Compiladores são essenciais para a evolução contínua da
+linguagem. **
+
+
+__________________________________________________________________________________________________________________
 **/
