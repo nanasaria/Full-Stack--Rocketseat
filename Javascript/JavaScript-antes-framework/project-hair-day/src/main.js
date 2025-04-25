@@ -1,12 +1,12 @@
-const path = require("path");
+"use strict";
 
-module.exports = {
-  target: "web",
-  mode: "development",
+import "./libs/dayjs.js";
 
-  entry: path.resolve(__dirname, "src", "main.js"),
-  output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-  },
-};
+import "./styles/global.css";
+import "./styles/form.css";
+import "./styles/schedule.css";
+
+import "./modules/form/submit.js";
+import "./modules/page-load.js";
+import "./modules/form/date-change.js";
+import "./modules/schedules/cancel.js";
