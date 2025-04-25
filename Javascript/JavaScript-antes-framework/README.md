@@ -1,1 +1,0 @@
-# JavaScript antes do Framework
