@@ -1,0 +1,13 @@
+{
+  "name": "primeiroservidor",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch src/server.js"
+  },
+  "keywords": [],
+  "author": "Nayara Soares",
+  "license": "ISC",
+  "description": "Primeiro Servidor na Formação Full Stack RocketSeat"
+}
