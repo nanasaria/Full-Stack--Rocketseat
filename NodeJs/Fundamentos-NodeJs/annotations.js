@@ -110,4 +110,13 @@ fazer paginação, dados NÃO obrigatórios.
 Não é recomendável passar dados sensíveis em parâmetros 
 nomeados.
 
+Estratégias para salvar dados
+Em memória - Se o servidor ou a aplicação parar e executá-la 
+novamente, os dados se perdem. Mais utilizado para testes.
+
+Arquivo - Para guardar os dados de forma permanente, podemos
+utilizar arquivos JSON com as informações.
+
+Database - Outra alternativa para armazenar os dados 
+permanentemente são os bancos de dados.
 */
