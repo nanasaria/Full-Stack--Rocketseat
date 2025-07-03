@@ -88,6 +88,26 @@ Como o Node.js lida com Requisições HTTP
 
 Enviando Dados
 Uma requisição HTTP pode incluir dados em um corpo (body).
+Quando a requisição chega ao servidor, o corpo não é
+imediatamente disponível como uma propriedade simples. Como
+o corpo pode ser grande, ele chega ao servidor como um fluxo
+(stream) de dados, dividido em pedaços (chunks).
 
+Middleware
+Middleware é um interceptador que pode executar código,
+fazer mudanças nos objetos de solicitação e resposta e 
+encerrar o ciclo de solicitação-resposta. Ele tem acesso
+a requisição e a resposta.
+
+Parâmetros Nomeados
+A interrogação diz: "Daqui para frente teremos parâmetros
+nomeados"
+
+http://localhost:3333/products?category=computer&price=5000
+
+Parâmetros nomeados são muito utilizados para filtrar, 
+fazer paginação, dados NÃO obrigatórios.
+Não é recomendável passar dados sensíveis em parâmetros 
+nomeados.
 
 */
