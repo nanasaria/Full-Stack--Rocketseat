@@ -119,4 +119,11 @@ utilizar arquivos JSON com as informações.
 
 Database - Outra alternativa para armazenar os dados 
 permanentemente são os bancos de dados.
+
+NOTAÇÕES COMUNS
+CREATE - Criar
+INDEX - Listar
+UPDATE - Atualizar
+REMOVE - Remover
+SHOW - Exibir 1 único registro
 */

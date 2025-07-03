@@ -1,0 +1,12 @@
+{
+  "name": "primeiroprojeto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js"
+  },
+  "author": "Nayara Nasaria Soares",
+  "license": "ISC",
+  "description": "API de gerenciamento de tickets de suporte."
+}
