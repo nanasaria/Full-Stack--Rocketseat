@@ -70,4 +70,13 @@ Express conta com:
 - Métodos utilitários HTTP 
 - Estrutura de roteamento leve e flexível com recursos que
 podem ser aumentados com middleware.
+
+Middleware Global -> Aplicar o middleware para todas as rotas
+Middleware Local -> Aplicar o middleware em uma rota específica
+
+next -> Tem acesso a próxima requisição, é quem diz para 
+seguir para a próxima requisição.
+
+.d.ts -> TypeScript entende que é um arquivo de tipagem global,
+ou seja, disponível para toda a aplicação.
 */
