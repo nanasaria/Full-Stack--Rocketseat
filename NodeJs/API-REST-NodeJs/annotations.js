@@ -79,4 +79,10 @@ seguir para a próxima requisição.
 
 .d.ts -> TypeScript entende que é um arquivo de tipagem global,
 ou seja, disponível para toda a aplicação.
+
+Schema Validation
+Permite criar regras de validação para permitir que dados 
+recebidos sigam um conjunto pré-definidos de regras. Essas 
+regras são definidas em um esquema, que descreve a forma
+esperada dos dados.
 */
