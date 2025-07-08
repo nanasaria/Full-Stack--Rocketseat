@@ -24,6 +24,7 @@ Tabela
 É uma estrutura de armazenamento fundamental em um banco 
 de dados relacional.
 Cada tabela guarda dados de um assunto.
+Tabelas também podem ser chamadas de Entidades.
 
 Exemplos:
 Tabela produtos -> Dados de produtos
