@@ -169,9 +169,125 @@ SELECT * FROM products WHERE name LIKE '%Mo%'
 Se utilizarmos % no inicio e final, ´procuramos por palavras 
 que contenham esse texto em qualquer parte.
 
-Tabela sqlite_sequence
+Filtrando Valores
+Diferente de -> SELECT * FROM products WHERE name <> 'Monitor'
+Ou seja, se name for diferente de "Monitor". O sinal para 
+diferente é: <>
+
+Maior que -> SELECT * FROM products WHERE price > 300
+Menor que -> SELECT * FROM products WHERE price < 300
+Maior ou igual -> SELECT * FROM products WHERE price >= 300
+Menor ou igual -> SELECT * FROM products WHERE price <= 300
+
+Operadores AND ou OR
+Podemos utilizar mais de um filtro com AND ou OR:
+SELECT * FROM products WHERE price > 500 AND price < 1000
+Nesse caso, selecionamos produtos onde o preço é maior que
+500 e menor que 1000.
+
+O operador OR garante que o SELECT vai atingir pelo menos
+um critério:
+SELECT * FROM products WHERE price > 500 OR price < 1000
+
+Operadores AND e OR juntos
+SELECT * FROM products WHERE price > 45 AND price < 1000 
+OR category = 'image'
+
+Parênteses
+Com os parênteses criamos grupos:
+SELECT * FROM products WHERE (price > 45 AND price < 1000) 
+AND (category = 'audio' OR category = 'image')
+Quando fazemos um parênteses, verifica-se primeiro os
+parênteses e depois retorna um "veredito"
+
+Between
+Filtro em um intervalo
+SELECT * FROM products WHERE price BETWEEN 600 AND 1200
+Outra forma de dizer que quer selecionar os itens com preço
+entre 600 e 1200
+
+IN
+SELECT * FROM products WHERE price IN (800, 550)
+Aqui dizemos que queremos selecionar os itens com price 800 
+e 550.
+
+ORDER BY
+Ordenar por uma coluna:
+SELECT * FROM products ORDER BY price
+
+DESC -> Decrescente
+ASC -> Ascendente
+
+Ordenar por uma coluna do maior para o menor
+SELECT * FROM products ORDER BY price DESC
+
+Ordenar por uma coluna do menor para o maior
+SELECT * FROM products ORDER BY price ASC
+
+Para utilizar Order By com Where precisamos seguir a ordem
+que é WHERE -> ORDER BY
+SELECT * FROM products WHERE category = 'audio' 
+ORDER BY price ASC
+
+LIMIT
+Define o número máximo de registros a serem retornados.
+SELECT * FROM products ORDER BY price DESC LIMIT 1
+
+COUNT
+Retorna a soma dos registros encontrados de acordo com os
+critérios definidos.
+
+SELECT COUNT(*) FROM products
+Esse asterisco é uma referência.
+
+SUM
+Soma valores em uma tabela.
+SELECT SUM(price) FROM products
+
+AVG
+Calcula a média de valores.
+SELECT AVG(price) FROM products
+
+ALIASES
+Utilizar alias em consultas SQL para renomear colunas na
+exibição dos resultados. O alias é um nome temporário que 
+não altera a estrutura da tabela.
+
+SELECT COUNT(*) AS TOTAL FROM products
+
+Com nomes compostos:
+SELECT COUNT(*) AS 'TOTAL DE PRODUTOS' FROM products 
+ou
+SELECT COUNT(*) AS [TOTAL DE PRODUTOS] FROM products 
+
+GROUP BY
+Agrupar registros.
+SELECT category, COUNT(*) AS total FROM products GROUP BY category
+Retorna o total de produtos em cada categoria
+________________________________________________________________________________
+
+RELACIONAMENTOS
+Um CARRO pertence a uma pessoa -> 1 para 1
+Um restaurante possui vários pratos -> 1 para muitos
+
+Os relacionamentos definem como as tabelas se conectam e
+interagem entre si.
+
+Chave Primária (PK): Identificador único.
+Chave Estrangeira (FK): Campo que referencia a chave 
+primária em outra tabela, estabelecendo uma ligação entre
+as duas tabelas.
+
+Tipos de Relacionamentos
+
+
+________________________________________________________________________________
+
+TABELA sqlite_sequence no SQLite
 Tabela gerada automaticamente quando uma coluna é definida
 como auto-incremento.
+
+
 
 
 */
