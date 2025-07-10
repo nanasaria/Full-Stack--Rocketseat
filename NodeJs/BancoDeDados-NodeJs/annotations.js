@@ -280,6 +280,25 @@ as duas tabelas.
 
 Tipos de Relacionamentos
 
+Um para Um (1:1): Quando um registro está associado a um 
+único registro em outra tabela.
+
+Um para Muitos (1:N): Quando um registro em uma tabela pode
+estar associado a muitos registros em outra tabela.
+
+Muitos para Muitos (N:M): Muitos registros em uma tabela
+podem estar associados a muitos registros em outra tabela.
+
+Relacionamento Um para Um representado no SQL:
+CREATE TABLE student_address (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+  student_id INTEGER UNIQUE NOT NULL,
+  street TEXT NOT NULL,
+  city TEXT NOT NULL,
+  
+  FOREIGN KEY (student_id) REFERENCES students(id)
+)
+
 
 ________________________________________________________________________________
 
