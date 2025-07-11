@@ -9,7 +9,7 @@ Um banco de dados é uma coleção organizada de dados.
 
 ## Por que usar Banco de Dados?
 
-- Facilita gestão
+- Facilitar gestão
 - Acesso e manipulação de dados
 - Escalabilidade
 - Eficiência
@@ -24,7 +24,12 @@ Organiza dados em tabelas estruturadas com linhas e colunas, estabelecendo rela�
 
 - Estrutura fundamental de armazenamento
 - Cada tabela guarda dados de um assunto específico
-- Compostas por linhas (registros) e colunas (campos)
+- Tabelas também podem ser chamadas de Entidades
+- Compostas por linhas (registros ou tuplas) e colunas (campos ou atributos)
+
+**Exemplos:**
+- Tabela produtos → Dados de produtos
+- Tabela de usuários → Dados de usuários
 
 ### Primary Keys
 
@@ -32,10 +37,11 @@ Chaves primárias identificam exclusivamente cada registro, garantindo unicidade
 
 ## SQLite
 
-Banco de dados relacional leve, auto-suficiente e funcional:
+Banco de dados relacional leve, auto-suficiente e totalmente funcional:
 
-- **Arquivo único**: Todos os dados em um arquivo `.db`
-- **Auto-suficiente**: Sem dependências externas
+- **Arquivo único**: Todos os dados, incluindo definições de tabelas, índices e informações, são mantidos em um único arquivo de disco
+- **Auto-suficiente**: Não depende de instalação externa ou configuração de servidor, pode ser incorporado diretamente em uma aplicação
+- **Convenção**: Arquivos `.db` para banco de dados
 
 ## Tipos de Dados SQLite
 
@@ -43,7 +49,7 @@ Banco de dados relacional leve, auto-suficiente e funcional:
 - `INTEGER` - Número inteiro
 - `REAL` - Número de ponto flutuante
 - `TEXT` - Sequência de caracteres
-- `BLOB` - Dados binários
+- `BLOB` - Dados binários grandes (imagens, arquivos ou qualquer tipo de dados não convertido automaticamente)
 
 ## Comandos SQL Essenciais
 
@@ -122,8 +128,11 @@ SELECT * FROM products WHERE name LIKE 'Mo%'   -- inicia com 'Mo'
 SELECT * FROM products WHERE name LIKE '%Mo%'  -- contém 'Mo'
 
 -- Comparações
-SELECT * FROM products WHERE price > 300       -- maior que
-SELECT * FROM products WHERE price <> 'Monitor' -- diferente
+SELECT * FROM products WHERE price > 300        -- maior que
+SELECT * FROM products WHERE price < 300        -- menor que
+SELECT * FROM products WHERE price >= 300       -- maior ou igual
+SELECT * FROM products WHERE price <= 300       -- menor ou igual
+SELECT * FROM products WHERE name <> 'Monitor'   -- diferente
 ```
 
 ### Operadores Lógicos
@@ -132,8 +141,14 @@ SELECT * FROM products WHERE price <> 'Monitor' -- diferente
 -- AND
 SELECT * FROM products WHERE price > 500 AND price < 1000
 
--- OR
-SELECT * FROM products WHERE price > 500 OR category = 'audio'
+-- OR (pelo menos um critério)
+SELECT * FROM products WHERE price > 500 OR price < 1000
+
+-- AND e OR juntos
+SELECT * FROM products WHERE price > 45 AND price < 1000 OR category = 'image'
+
+-- Parênteses (grupos)
+SELECT * FROM products WHERE (price > 45 AND price < 1000) AND (category = 'audio' OR category = 'image')
 
 -- BETWEEN
 SELECT * FROM products WHERE price BETWEEN 600 AND 1200
@@ -151,6 +166,9 @@ SELECT * FROM products ORDER BY price ASC   -- crescente
 
 -- Limitar resultados
 SELECT * FROM products ORDER BY price DESC LIMIT 1
+
+-- WHERE com ORDER BY (ordem obrigatória)
+SELECT * FROM products WHERE category = 'audio' ORDER BY price ASC
 ```
 
 ## Funções de Agregação
@@ -166,7 +184,9 @@ SELECT SUM(price) FROM products
 SELECT AVG(price) FROM products
 
 -- Usar aliases
+SELECT COUNT(*) AS TOTAL FROM products
 SELECT COUNT(*) AS 'TOTAL DE PRODUTOS' FROM products
+SELECT COUNT(*) AS [TOTAL DE PRODUTOS] FROM products
 
 -- Agrupar
 SELECT category, COUNT(*) AS total FROM products GROUP BY category
@@ -174,8 +194,59 @@ SELECT category, COUNT(*) AS total FROM products GROUP BY category
 
 ## Relacionamentos
 
-- **1 para 1**: Um carro pertence a uma pessoa
-- **1 para muitos**: Um restaurante possui vários pratos
+Os relacionamentos definem como as tabelas se conectam e interagem entre si.
 
 **Chave Primária (PK)**: Identificador único  
-**Chave Estrangeira (FK)**: Campo que referencia a chave primária de outra tabela
+**Chave Estrangeira (FK)**: Campo que referencia a chave primária em outra tabela, estabelecendo ligação entre tabelas
+
+### Tipos de Relacionamentos
+
+**Um para Um (1:1)**: Um registro associado a um único registro em outra tabela
+- Exemplo: Um carro pertence a uma pessoa
+
+```sql
+CREATE TABLE student_address (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  student_id INTEGER UNIQUE NOT NULL,
+  street TEXT NOT NULL,
+  city TEXT NOT NULL,
+  
+  FOREIGN KEY (student_id) REFERENCES students(id)
+)
+```
+
+**Um para Muitos (1:N)**: Um registro pode estar associado a muitos registros em outra tabela
+- Exemplo: Um restaurante possui vários pratos
+
+```sql
+CREATE TABLE course_modules (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  course_id INTEGER NOT NULL,
+  
+  FOREIGN KEY (course_id) REFERENCES courses(id)
+)
+```
+
+**Muitos para Muitos (N:M)**: Muitos registros podem estar associados a muitos registros em outra tabela
+
+### INNER JOIN
+
+Traz dados de duas tabelas relacionadas:
+
+```sql
+-- Um para Muitos
+SELECT m.id, m.name, m.course_id, c.name
+FROM course_modules AS m
+INNER JOIN courses AS c ON c.id = m.course_id
+
+-- Muitos para Muitos
+SELECT sc.id, sc.students_id, s.name AS 'student', sc.course_id, c.name AS 'course'
+FROM students_courses AS sc
+INNER JOIN students AS s ON s.id = sc.students_id
+INNER JOIN courses AS c ON c.id = sc.course_id
+```
+
+## Observações
+
+- **sqlite_sequence**: Tabela gerada automaticamente quando uma coluna é definida como auto-incremento

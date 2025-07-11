@@ -299,6 +299,35 @@ CREATE TABLE student_address (
   FOREIGN KEY (student_id) REFERENCES students(id)
 )
 
+Relacionamento Um para Muitos representado no SQL:
+CREATE TABLE course_modules (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  course_id INTEGER NOT NULL,
+  
+  FOREIGN KEY (course_id) REFERENCES courses(id)
+)
+
+Perceba que o id da outra tabela (courses), nesse caso, 
+não é único.
+
+INNER JOIN
+SELECT m.id, m.name, m.course_id, c.name
+FROM course_modules AS m
+INNER JOIN courses AS c ON c.id = m.course_id
+
+O Inner Join traz duas tabelas relacionadas.
+
+Relacionamento Muitos para Muitos
+SELECT m.id, m.name, m.course_id, c.name
+FROM course_modules AS m
+INNER JOIN courses AS c ON c.id = m.course_id
+
+SELECT MUITOS PARA MUITOS
+SELECT sc.id, sc.students_id, s.name AS 'student', sc.course_id, c.name AS 'course'
+FROM students_courses AS sc
+INNER JOIN students AS s ON s.id = sc.students_id
+INNER JOIN courses AS c ON c.id = sc.course_id
 
 ________________________________________________________________________________
 
