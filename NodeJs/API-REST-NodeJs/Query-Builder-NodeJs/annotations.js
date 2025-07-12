@@ -50,4 +50,5 @@ cuida da tradução disso para SQL. Mais abstrato e próximo
 da linguagem de programação orientada a objetos. Ideal para 
 quem quer evitar escrever SQL ou abstrair o banco por 
 completo.
+
 */
