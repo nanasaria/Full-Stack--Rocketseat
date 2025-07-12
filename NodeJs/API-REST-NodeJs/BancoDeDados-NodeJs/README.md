@@ -250,3 +250,7 @@ INNER JOIN courses AS c ON c.id = sc.course_id
 ## Observações
 
 - **sqlite_sequence**: Tabela gerada automaticamente quando uma coluna é definida como auto-incremento
+
+---
+
+**Autor:** Nayara Nasaria Soares

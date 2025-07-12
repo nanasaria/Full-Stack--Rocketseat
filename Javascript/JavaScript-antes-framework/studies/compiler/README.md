@@ -66,3 +66,7 @@ user.sendMessage();
 ## Considerações
 
 Embora o Babel não seja um compilador no sentido tradicional (como os de linguagens como C ou Java), ele realiza etapas fundamentais de um compilador: parsing, transformação e geração de código. Esse estudo serve como uma introdução prática ao funcionamento interno de um compilador moderno voltado para JavaScript.
+
+---
+
+**Autor:** Nayara Nasaria Soares

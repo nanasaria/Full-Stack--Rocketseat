@@ -73,3 +73,7 @@ module.exports = {
 ## Considerações
 
 Este projeto não tem como foco a interface ou funcionalidades específicas do código, mas sim o funcionamento de uma ferramenta essencial no desenvolvimento moderno: o bundler. Através dessa prática, é possível entender a importância da configuração, transformação e empacotamento dos arquivos para ambientes de desenvolvimento e produção.
+
+---
+
+**Autor:** Nayara Nasaria Soares

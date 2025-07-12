@@ -299,3 +299,5 @@ fruits.splice(0, 2);
 > **Obs:** Para o JavaScript, arrays também são objetos!
 
 ---
+
+**Autor:** Nayara Nasaria Soares

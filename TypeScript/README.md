@@ -1,4 +1,4 @@
-# 📚 TypeScript — Anotações e Conceitos
+# TypeScript — Anotações e Conceitos
 
 ## Introdução
 
@@ -22,7 +22,7 @@
 
 ---
 
-## 📌 Tipos Primitivos
+## Tipos Primitivos
 
 ```ts
 let username: string;
@@ -32,7 +32,7 @@ let isLoading: boolean;
 
 ---
 
-## 📌 Tipagem Explícita vs Inferência de Tipos
+## Tipagem Explícita vs Inferência de Tipos
 
 - **Explícita:** você declara o tipo.
 - **Inferência:** o TypeScript deduz o tipo pelo valor inicial.
@@ -44,7 +44,7 @@ let age = 20; // inferência
 
 ---
 
-## 📌 Tipo `any`
+## Tipo `any`
 
 Aceita qualquer valor, perde os benefícios da tipagem estática.
 
@@ -57,7 +57,7 @@ message = true;
 
 ---
 
-## 📌 Arrays
+## Arrays
 
 ```ts
 let names: string[] = ["Lady Gaga", "Britney Spears"];
@@ -72,7 +72,7 @@ let products = ["Madonna", "Chappell Roan"];
 
 ---
 
-## 📌 Funções
+## Funções
 
 ```ts
 function sum(x: number, y: number): number {
@@ -86,7 +86,7 @@ const showMessage = (name: string): string => {
 
 ---
 
-## 📌 Objetos
+## Objetos
 
 ```ts
 let user: { name: string; age: number; urlAvatar?: string } = {
@@ -105,14 +105,14 @@ function signIn({ email, password }: { email: string; password: string }) {
 
 ---
 
-## 📌 `null` vs `undefined`
+## `null` vs `undefined`
 
 - **undefined:** variável declarada sem valor atribuído.
 - **null:** ausência de valor intencional.
 
 ---
 
-## 📌 Union Types
+## Union Types
 
 Permite múltiplos tipos:
 
@@ -122,7 +122,7 @@ let response: string | null;
 
 ---
 
-## 📌 Interfaces
+## Interfaces
 
 Definem estrutura de objetos.
 
@@ -152,7 +152,7 @@ interface Teacher extends Person {
 
 ---
 
-## 📌 Type
+## Type
 
 Tipagem personalizada.
 
@@ -178,7 +178,7 @@ type TeacherHistory = PersonSchool & { subjects: string[] };
 
 ---
 
-## 📌 Type vs Interface
+## Type vs Interface
 
 | Interface                                     | Type                                            |
 | :-------------------------------------------- | :---------------------------------------------- |
@@ -193,7 +193,7 @@ type TeacherHistory = PersonSchool & { subjects: string[] };
 
 ---
 
-## 📌 Asserção de Tipos
+## Asserção de Tipos
 
 Forçar um tipo para o TypeScript.
 
@@ -204,7 +204,7 @@ let userResponse = {} as UserResponse;
 
 ---
 
-## 📌 Restringindo Valores
+## Restringindo Valores
 
 ```ts
 type Size = "small" | "medium" | "large";
@@ -214,7 +214,7 @@ size = "small";
 
 ---
 
-## 📌 Enums
+## Enums
 
 Enumera constantes.
 
@@ -230,7 +230,7 @@ let profile: number = Profile.Admin;
 
 ---
 
-## 📌 Generics
+## Generics
 
 Tipagem flexível e reutilizável.
 
@@ -259,7 +259,7 @@ function useState<T extends number | string = string>() {
 
 ---
 
-## 📌 Utilitários TypeScript
+## Utilitários TypeScript
 
 ### `Partial`
 
@@ -322,3 +322,5 @@ const icon: Icon = "add";
 ```
 
 ---
+
+**Autor:** Nayara Nasaria Soares

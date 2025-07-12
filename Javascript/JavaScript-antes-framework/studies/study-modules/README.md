@@ -1,10 +1,10 @@
-# 📘 Módulo de Cálculo com ESModules
+# Módulo de Cálculo com ESModules
 
 Este módulo demonstra diferentes formas de **exportar** e **importar** funções e classes em JavaScript usando **ESModules** (`import`/`export`).
 
 ---
 
-## 📦 Estrutura do Arquivo
+## Estrutura do Arquivo
 
 ```bash
 .
@@ -14,9 +14,9 @@ Este módulo demonstra diferentes formas de **exportar** e **importar** funçõe
 
 ---
 
-## 📥 Importando e Utilizando
+## Importando e Utilizando
 
-### ✅ Utilizando uma Classe
+### Utilizando uma Classe
 
 ```js
 import { Calc } from "./calc.js";
@@ -29,7 +29,7 @@ console.log("2 * 3 =", calc.multiply(2, 3));
 
 ---
 
-### ✅ Importação com Alias
+### Importação com Alias
 
 ```js
 import { sum as s, multiply as m } from "./calc.js";
@@ -40,7 +40,7 @@ console.log("2 * 3 =", m(2, 3));
 
 ---
 
-### ✅ Importação com `default` e `named`
+### Importação com `default` e `named`
 
 ```js
 import sum, { multiply } from "./calc.js";
@@ -51,7 +51,7 @@ console.log("2 * 3 =", multiply(2, 3));
 
 ---
 
-### ✅ Importação Comum
+### Importação Comum
 
 ```js
 import { sum, multiply } from "./calc.js";
@@ -62,7 +62,7 @@ console.log("2 * 3 =", multiply(2, 3));
 
 ---
 
-### ✅ Importar Tudo
+### Importar Tudo
 
 ```js
 import * as calc from "./calc.js";
@@ -73,9 +73,9 @@ console.log("2 * 3 =", calc.multiply(2, 3));
 
 ---
 
-## 🔧 Exportando no `calc.js`
+## Exportando no `calc.js`
 
-### 🔹 Exportação `default`
+### Exportação `default`
 
 ```js
 export default function sum(a, b) {
@@ -83,7 +83,7 @@ export default function sum(a, b) {
 }
 ```
 
-### 🔹 Exportação Nomeada
+### Exportação Nomeada
 
 ```js
 export function multiply(a, b) {
@@ -91,13 +91,13 @@ export function multiply(a, b) {
 }
 ```
 
-### 🔹 Exportação Múltipla
+### Exportação Múltipla
 
 ```js
 export { sum, multiply };
 ```
 
-### 🔹 Renomeando Exportações
+### Renomeando Exportações
 
 ```js
 function sum(a, b) {
@@ -122,7 +122,7 @@ import { sumTwoNumbers, multiplyTwoNumbers } from "./calc.js";
 
 ---
 
-## 🔣 Exportando uma Classe
+## Exportando uma Classe
 
 ```js
 export class Calc {
@@ -134,4 +134,9 @@ export class Calc {
     return a * b;
   }
 }
+```
+
+---
+
+**Autor:** Nayara Nasaria Soares
 ```

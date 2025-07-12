@@ -121,3 +121,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento deste projeto:
 - `webpack-dev-server`: Um servidor de desenvolvimento local para servir a aplicação durante o desenvolvimento, com recursos como hot module replacement.
 - `json-server`: Uma biblioteca para criar rapidamente uma API REST fake a partir de um arquivo JSON, utilizada aqui para simular o backend de agendamentos.
 - `dayjs`: Uma biblioteca JavaScript minimalista para trabalhar com datas e horas.
+
+---
+
+**Autor:** Nayara Nasaria Soares
