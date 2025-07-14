@@ -60,5 +60,143 @@ dockerignore -> O arquivo .dockerignore é semelhante ao
 pastas devem ser ignorados ao enviar arquivos para um 
 container Docker.
 
+Visualizar containers em execução
+docker ps
 
+Visualizar todos os containers 
+docker ps -a
+
+Visualizar imagens
+docker image ls
+
+Para executar e criar um container
+docker run -p 3333:3333 (nome-imagem ou id da imagem)
+A flag -p é para indicar a porta.
+
+Para executar e criar um container em background
+docker run -p 3333:3333 -d api
+
+Para iniciar um container que já foi criado
+docker start <id container>
+
+Para visualizar logs e históricos de containers
+Logs: docker logs <id imagem>
+Histórico: docker history <nome imagem>
+
+Para pausar a executação de um container
+docker pause <id container>
+
+Voltar o container pausado para em execução
+docker unpause <id container>   
+
+Para parar a execução em background
+docker stop <id container> 
+
+Estados de um Container
+STATUS
+Em execução -> Up quando o container está em execução.
+Pausado -> Up (tempo. Ex: 9 minutos) (Paused)
+Parado -> Exited
+
+Remover container ou imagem
+Para remover container, ele não pode estar em execução ou 
+você pode forçar a remoção.
+Remover container -> docker rm <id container>
+Remoção forçada container -> docker rm -f <id container>
+Para remover imagem -> docker rmi <id imagem>
+
+Utilizar TAG para versionar imagem
+Para criar -> docker build -t <nome imagem>:v1 .
+Nesse caso estamos dizendo para criar uma imagem com a tag
+v1, mas podia ser qualquer uma e o . é para sinalizar
+para utilizar o Dockerfile. A flag -t é o que permite 
+atribuir uma tag de versão a imagem criada.
+
+Para executar a imagem com a tag
+docker run -p 3333:3333 -d api:v2
+
+Efemeridade em Containers
+
+Efêmero -> Característica do que é temporário.
+
+Um Container é Efêmero
+Containers são projetados para serem descartáveis e podem
+ser facilmente parados, destruídos ou substituídos. Portanto,
+se precisar armazenar dados, é recomendado utilizar ambiente
+externo ao container. Se os dados não forem armazenados 
+externamente, esses dados serão perdidos quando o container
+for encerrado ou removido.
+
+Como acessar o diretório de trabalho dos containers
+docker exec -it <id image> //bin//sh
+ou
+docker exec -it <id image> bash
+
+Nesse diretório de trabalho podemos executar comandos linux.
+
+Para inspecionar um container
+docker container inspect <id container>
+
+Como criar volumes
+docker volume create <nome que quiser>
+
+Inspecionar volume
+docker volume inspect <nome do volume>
+
+Como listar volumes
+docker volume ls
+
+Executar container com volume
+docker run -v <nome volume>:<diretorio de trabalho> -p 3333:3333 -d <nome imagem>
+Ex: docker run -v api-volume:/usr/src/app -p 3333:3333 -d api 
+
+Se executarmos o container sem utilizar o volume, os dados 
+não persistem.
+
+Como remover volume 
+docker volume rm <nome volume>
+
+Mas só podemos remover volumes que não estão vinculados a
+containers
+
+Para resolver isso, precisamos remover os containers que 
+utilizam o volume.
+
+Se quiser excluir todos os containers:
+docker container prune
+
+Depois de removidos, ai sim execute o comando: 
+docker volume rm <nome volume>
+
+Para baixar imagens do Docker Hub:
+docker run --name <Nome da imagem>:versão
+
+Exemplo: 
+docker run --name postgresql bitnami/postgresql:latest
+
+Flag -e:
+Essa flag indica que queremos passar variáveis de ambiente.
+
+Ex:
+docker run --name db-postgres -e POSTGRES_USER=postgres -e
+POSTGRES_PASSWORD=senha -p 5432:5432 -d bitnami/postgresql:latest
+
+Docker Compose
+Permite definir, configurar e rodar múltiplos containers
+Docker de uma vez só, usando um arquivo YAML.
+
+Ele facilita a orquestração de containers que precisam 
+trabalhar juntos, como:
+- um container para sua aplicação Node.js
+- outro para o banco de dados PostgreSQL
+
+O Docker Compose é uma ferramenta usada para definir e
+executar aplicações de vários contêineres do Docker.
+No Compose, um arquivo YAML é usado para configurar
+os serviços o aplicativo. Em seguida, você cria e inicia
+todos os serviços com base na sua configuração executando
+um só comando.
+
+Para Executar o Docker Compose
+docker-compose up -d
 */
