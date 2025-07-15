@@ -46,4 +46,10 @@ Agrupar testes
 É muito comum um arquivo de teste testar várias funcionalidades
 da mesma função. Sendo cenários de sucesso ou de falhas. Nesse
 sentido, é interessante agrupar testes da mesma função.
+
+Teste End-to-End (E2E)
+Testes E2E são testes que simulam a experiência real do
+usuário com o sistema, testando o fluxo completo de uma
+aplicação do início ao fim.
+
 */
