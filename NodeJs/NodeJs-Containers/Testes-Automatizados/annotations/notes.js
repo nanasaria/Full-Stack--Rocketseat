@@ -52,4 +52,7 @@ Testes E2E são testes que simulam a experiência real do
 usuário com o sistema, testando o fluxo completo de uma
 aplicação do início ao fim.
 
+Observação: Podemos aninhar expectativas de testes. Ex:
+expect(sessionResponse.body.token).toEqual(expect.any(String));
+
 */
