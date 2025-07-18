@@ -82,4 +82,8 @@ Realizar Deploy de atualização do projeto
 É necessário apenas realizar o commit na branch escolhida no
 deploy e o Render identificará a mudança e fará a build
 automaticamente em seguida.
+
+Observação: Uma boa prática é colocar a pasta build ou seja 
+qual for, no .gitignore para ela não subir para o github. 
+Eu coloquei ela apenas para fins de estudo.
 */
