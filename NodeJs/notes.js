@@ -37,4 +37,21 @@ Ex:
 const app = express();
 app.use(cors());
 
+OBSERVAÇÃO SOBRE O NODE.JS:
+O status 200 é padrão, ou seja, se você não passar o status,
+retorna 200.
+
+Entendendo Paginação
+Paginação -> Retorna resultados conforme uma quantidade
+estabelecida. Ou seja, se definir 10 itens por página, 
+retorna-se 10 itens - máximo 10 itens - em cada página.
+
+perPage -> Quantidade de itens por página.
+page -> Número da página desejada.
+take -> Garante que apenas o número de registros definidos
+        em perPage será retornado.
+skip -> Define quantos registros serão ignorados antes de
+começar a busca, para pegar somente os próximos registros e
+ignorar a página anterior.
+
 */
