@@ -230,4 +230,8 @@ Observação: é possível ter múltiplos useEffect em
 diferentes contextos, permitindo uma gestão mais flexível 
 dos efeitos colaterais.
 
+Observação: Tudo que é colocado na pasta public fica automaticamente
+disponível, basta colocar /nomeArquivo.extensao.
+Ex: /icon.svg
+
 */
